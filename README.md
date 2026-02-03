@@ -187,13 +187,13 @@ Estrutura organizada para facilitar **manutenção, escalabilidade e leitura té
 **1️⃣ Clone o repositório**
 
 ```bash
-git clone https://github.com/rafaelq80/conta_bancaria_ts_2026.git
+git clone https://github.com/dashenio/conta_bancaria.git
 ```
 
 **2️⃣ Acesse a pasta do projeto via terminal**
 
 ```bash
-cd conta_bancaria_ts_2026
+cd conta_bancaria
 ```
 
 **3️⃣ Instale as dependências**
@@ -252,8 +252,8 @@ Este projeto está sob licença **MIT** — livre para uso educacional e profiss
 
 **Rafael — Desenvolvedor Full Stack & Instrutor**
 
-🔗 **GitHub:** https://github.com/rafaelq80
+🔗 **GitHub:** https://github.com/dashenio
 
-🔗 **LinkedIn:** https://www.linkedin.com/in/rafaelq80
+🔗 **LinkedIn:** https://www.linkedin.com/in/vivian-srodrigues
 
 Projeto desenvolvido para **aprendizado contínuo**, **demonstração técnica** e **portfólio profissional**.
