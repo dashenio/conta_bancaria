@@ -1,12 +1,24 @@
 import leia from 'readline-sync';
-import { colors } from './src/util/Colors'
+import { colors } from './src/util/Colors';
+import { Conta } from './src/model/Conta';
 
 export function main() {
     let opcao: number;
 
+    // Instanciar Objetos da Classe Conta
+    const c1 = new Conta(1, 1234,'Sofia', 1, 100000);
+   
+    // Testes do Médodo Sacar
+    console.log('Sacar 100,00: ', c1.sacar(100.00));
+    console.log('Saldo', c1.saldo);
+    console.log('Sacar 200.000,00: ', c1.sacar(200000.00));
+    console.log('Sacar 0,00: ', c1.sacar(0.00));
+
+    c1.visualizar();
+   
     while(true) {
 
-        console.log(colors.bg.black, colors.fg.yellow,"\n*****************************************************");
+        console.log(colors.fg.yellow,"\n*****************************************************");
         console.log("                                                     ");
         console.log("                BANCO DO BRAZIL COM Z                ");
         console.log("                                                     ");
