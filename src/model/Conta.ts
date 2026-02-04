@@ -62,6 +62,14 @@ export class Conta{
 
     // Métodos Auxiliares
 
+    public depositar(valor: number): void{
+
+        if(valor <= 0)
+            console.log(colors.fg.red, 'Digite um valor maior que zero.', colors.reset);
+        else
+        this._saldo += valor;
+    }
+
     public sacar(valor: number): boolean{
 
         if(valor > this._saldo){

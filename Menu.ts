@@ -7,14 +7,26 @@ export function main() {
 
     // Instanciar Objetos da Classe Conta
     const c1 = new Conta(1, 1234,'Sofia', 1, 100000);
+    const c2 = new Conta(2, 5678, 'Marcelo', 2, 1000);
    
     // Testes do Médodo Sacar
-    console.log('Sacar 100,00: ', c1.sacar(100.00));
-    console.log('Saldo', c1.saldo);
-    console.log('Sacar 200.000,00: ', c1.sacar(200000.00));
-    console.log('Sacar 0,00: ', c1.sacar(0.00));
-
     c1.visualizar();
+    console.log('Sacar R$ 100,00: ', c1.sacar(100.00));
+    console.log('Saldo R$:', c1.saldo.toFixed(2));
+    console.log('Sacar R$ 200.000,00: ', c1.sacar(200000.00));
+    console.log('Sacar R$ 0,00: ', c1.sacar(0.00));
+    console.log('Saldo R$:', c1.saldo.toFixed(2));
+    
+    // Testes do Método Depositar
+    c2.visualizar();
+    console.log('Depositar: R$ 27,00');
+    c2.depositar(27.00)
+    console.log('Saldo: R$', c2.saldo.toFixed(2));
+    console.log('Depositar R$ -100.00: ');
+    c2.depositar(-100.00)
+    console.log('Depositar R$ 0,00:');
+    c2.depositar(0.00)
+    console.log('Saldo R$:', c2.saldo.toFixed(2));
    
     while(true) {
 
