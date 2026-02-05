@@ -250,7 +250,7 @@ Este projeto está sob licença **MIT** — livre para uso educacional e profiss
 
 
 
-**Rafael — Desenvolvedor Full Stack & Instrutor**
+**Vivian — Desenvolvedora Full Stack em Treinamento**
 
 🔗 **GitHub:** https://github.com/dashenio
 
