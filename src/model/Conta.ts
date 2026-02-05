@@ -1,6 +1,6 @@
-import { colors } from "../util/Colors";
+import { Colors } from "../util/Colors";
 
-export class Conta{
+export abstract class Conta{
     
     // Atributos da Classe
     private _numero: number; // _ indica que o método é privado
@@ -63,17 +63,15 @@ export class Conta{
     // Métodos Auxiliares
 
     public depositar(valor: number): void{
-
         if(valor <= 0)
-            console.log(colors.fg.red, 'Digite um valor maior que zero.', colors.reset);
+            console.log(Colors.fg.red, 'Digite um valor maior que zero.', Colors.reset);
         else
         this._saldo += valor;
     }
 
     public sacar(valor: number): boolean{
-
         if(valor > this._saldo){
-            console.log(colors.fg.red, 'Saldo Insuficiente!', colors.reset);
+            console.log(Colors.fg.red, 'Saldo Insuficiente!', Colors.reset);
             return false
         }
         this._saldo -= valor;
@@ -81,9 +79,7 @@ export class Conta{
     }
 
     public visualizar(): void{
-
         let tipo: string;
-        
         switch(this._tipo){
             case 1:
                 tipo = 'Conta Corrente'
