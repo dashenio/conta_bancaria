@@ -60,7 +60,7 @@ export abstract class Conta{
 		this._saldo = value;
 	}
 
-    // Métodos Auxiliares
+  
 
     public depositar(valor: number): void{
         if(valor <= 0)
@@ -77,6 +77,8 @@ export abstract class Conta{
         this._saldo -= valor;
         return true;
     }
+      
+    // Métodos Auxiliares
 
     public visualizar(): void{
         let tipo: string;

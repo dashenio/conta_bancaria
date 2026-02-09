@@ -57,17 +57,60 @@ export class ContaController implements ContaRepository{
             console.log(Colors.fg.red, '\nConta não Encontrada!', Colors.reset);
 
     }
+
+    procurarPorTitular(titular: string): void {
+        
+        // Filtragem dos dados
+        const buscaPorTitular = this.listaContas.filter( conta =>
+            conta.titular.toUpperCase().includes(titular.toUpperCase())
+        );
+
+        // Listagem dos dados filtrados
+        if (buscaPorTitular.length > 0){
+            buscaPorTitular.forEach( conta => conta.visualizar());
+        }else{
+            console.log(Colors.fg.red, `\nNenhuma conta foi encontrada!`, Colors.reset);
+        }
+
+    }
     
     // Métodos Bancários  ----------------------------------------------------------------
 
     sacar(numero: number, valor: number): void {
-        throw new Error("Method not implemented.");
+        const buscaConta = this.buscarNoArray(numero);
+
+        if(buscaConta !== null){
+            if(buscaConta.sacar(valor) === true)  
+                console.log(Colors.fg.green, 
+                `\nO Saque no valor de R$ ${valor.toFixed(2)} na Conta número ${numero} foi realizado com sucesso!`, Colors.reset); 
+        }else
+            console.log(Colors.fg.red, `\nA Conta número ${numero} não foi encontrada!`, Colors.reset);
     }
+
     depositar(numero: number, valor: number): void {
-        throw new Error("Method not implemented.");
+         const buscaConta = this.buscarNoArray(numero);
+
+        if(buscaConta !== null){
+            buscaConta.depositar(valor)  
+            console.log(Colors.fg.green, 
+                `\nO Depósito no valor de R$ ${valor.toFixed(2)} na Conta número ${numero} foi realizado com sucesso!`, Colors.reset); 
+        }else
+            console.log(Colors.fg.red, `\nA Conta número ${numero} não foi encontrada!`, Colors.reset);
     }
     transferir(numeroOrigem: number, numeroDestino: number, valor: number): void {
-        throw new Error("Method not implemented.");
+        
+        const buscaContaOrigem = this.buscarNoArray(numeroOrigem);
+        const buscaContaDestino = this.buscarNoArray(numeroDestino);
+
+        if(buscaContaOrigem !== null && buscaContaDestino !== null){
+            if(buscaContaOrigem.sacar(valor) === true){  
+                buscaContaDestino.depositar(valor);
+                console.log(Colors.fg.green, 
+                `\nA Transferência no valor de R$ ${valor.toFixed(2)} da Conta número ${numeroOrigem} 
+                 \npara a Conta número ${numeroDestino} foi realizado com sucesso!`, Colors.reset); 
+            }
+        }else
+            console.log(Colors.fg.red, `\nA Conta de origem e/ou destino não foram encontradas!`, Colors.reset);
     }
 
     // Métodos Auxiliares  ----------------------------------------------------------------
