@@ -89,9 +89,9 @@ Este projeto foi estruturado para:
 | CRUD de contas bancárias        | ✅      |
 | Conta Corrente e Conta Poupança | ✅      |
 | Depósitos e Saques              | ✅      |
-| Transferência entre contas      | ❌      |
+| Transferência entre contas      | ✅      |
 | Consulta por número             | ✅      |
-| Consulta por titular            | ❌      |
+| Consulta por titular            | ✅      |
 | Regras de saldo e limite        | ✅     |
 | Interface CLI interativa        | ✅      |
 
